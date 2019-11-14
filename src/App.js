@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import List from './components/List/List'
+import SendForm from './components/SendForm/SendForm';
+import Logo from './components/Logo/Logo';
+import Success from './components/Success/Success';
+
+import {
+  Switch,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{margin:'auto'}}>
+        <Logo /> {/* TODO - Clicking the logo should reset the UI */}
+        <div className="card" style={{width:'580px', minHeight:'325px'}}>
+          <div className="card-content">
+            <Switch>
+              <Route exact path="/">
+                <List />
+              </Route>
+              <Route exact path="/send">
+                <SendForm />
+              </Route>
+              <Route path="/send/success">
+                <Success />
+              </Route>
+            </Switch>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
