@@ -12,7 +12,8 @@
  
 ### Input Validation
 
-    On the "Send Money"
+    On the "Send Money" Form, I kept the input validation simple, with only two checks:
+    - 
 
 ## State Management
 
@@ -28,12 +29,20 @@
 
 ## Testing
 
+    The app's mounting and unmounting is tested on src/App.test.js. It's a simple test that renders the app and then unmounts it, checking for any breaking issues.
+    I additionally
+
 # TODO
 
-    Tests
+    Add a proper loading icon
+    Move the fetching to root component
+    Clicking the logo should reset the ui state
     Fix style of form
     Improve style of success
-    clicking the logo should reset the ui state
-    Add a proper loading icon
+    Tests
+    
+    
     Display a "copied to clipboard" alert
     Try styling with styled components
+    Consider a dark mode toggle
+    
