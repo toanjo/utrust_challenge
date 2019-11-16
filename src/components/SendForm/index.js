@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { processTransaction } from '../../actions/actions';
 import {
   useHistory
 } from "react-router-dom";
 
-import { Form, Input, Label, Footer } from './styles';
+import { processTransaction } from '../../actions/actions';
+
 import { Title } from '../../styles/common';
+import { Form, Input, Label, Footer } from './styles';
 
 export default function SendForm() {
 
@@ -21,18 +22,20 @@ export default function SendForm() {
   const history = useHistory();
 
   useEffect(() => {
+    // If transaction is completed, redirect to success page
     if(ui.redirectToSuccess) {
       history.replace("send/success")
     }
   }, [ui.redirectToSuccess, history])
 
-  const checkFunds = React.useCallback(() => {
+  const checkFunds = useCallback(() => {
     var account = list.filter(obj => {return obj.account === origin})[0];
     setAvailable(account ? account.balance : null)
   },[list, origin])
 
   useEffect(() => {
     if(origin && origin.length === 42) {
+      // If a valid address is entered, check the available balance for that address
       checkFunds();
     } else setAvailable(null);
   }, [origin, checkFunds])
@@ -47,7 +50,7 @@ export default function SendForm() {
     } else alert('Origin Address is not valid.')    
   }
 
-  if (!list.length) { // Refreshing the /send URL redirects back to the list
+  if (!list.length) { // Refreshing the "/send" URL redirects back to the list
     history.replace("/");
     return null;
   }

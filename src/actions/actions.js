@@ -4,10 +4,6 @@ export const setAddresses = (data) => ({
     payload: data
 })
 
-export const handleError = () => ({
-    type: 'HANDLE_ERROR'
-})
-
 // Transactions
 export const processTransaction = (data) => ({
     type: 'PROCESS_TRANSACTION',
@@ -25,4 +21,8 @@ export const copiedToClipboard = () => ({
         field: "copied",
         value: true
     }
+})
+
+export const handleError = () => ({
+    type: 'HANDLE_ERROR'
 })

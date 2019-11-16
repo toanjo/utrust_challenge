@@ -32,7 +32,7 @@ describe('Process a Simple, Valid Transaction', () => {
         cy.get('button[id="send-button"]').should('not.be.disabled');
     })
 
-    it('Clicks Send and is redirected to the Success Page', () => {
+    it('Clicks Send and is redirected to the Success page', () => {
         cy.get('button[id="send-button"]').click();
 
         // Assertion: Expect to be in the success page

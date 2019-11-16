@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ListItem from '../ListItem';
 import {
   useHistory
 } from "react-router-dom";
 
-import { ListElement, Footer, Fallback } from './styles';
 import { Title } from '../../styles/common';
+import { ListElement, Footer, Fallback } from './styles';
+
+import ListItem from '../ListItem';
 
 export default function List() {
 

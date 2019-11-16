@@ -12,10 +12,11 @@ export default function Success() {
   const transaction = useSelector(state => state.lastTransaction)
   const history = useHistory();
 
-  if (!transaction) { // Refreshing the success page leads back to the list
+  if (!transaction) { // Refreshing the "/send/success" URL leads back to the list
     history.replace("/");
     return null;
   }
+  
   return (
     <div>
         <Title>

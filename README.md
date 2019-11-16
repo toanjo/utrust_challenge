@@ -54,4 +54,4 @@ I took this as an opportunity to try out **<a href="https://www.styled-component
 
 An automated test that exercises the transaction functionality is included, built using **<a href="https://www.cypress.io/" target="_blank">Cypress</a>**.
 
-This is a simple test that simulates user action and verifies that the app behaves as expected.
+This is a simple test that simulates user action and verifies that the app behaves as expected. The test definition is in `cypress/integration/Transaction.js`.

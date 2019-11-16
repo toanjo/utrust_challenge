@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+
 import { copiedToClipboard } from '../../actions/actions';
 
 import { Balance, Address, Item } from './styles';
@@ -20,7 +21,6 @@ export default function ListItem (address) {
 
   return (
     <Item>
-        {/* TODO - Display a "copied to clipboard" alert */}
         <Address onClick={() => copyToClipboard(address.data.account)}>
           {address.data.account}
         </Address>

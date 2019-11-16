@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+
 import { resetUI } from '../../actions/actions';
+
 import { LogoElement } from './styles';
 import icon from '../../utils/icon.png';
 
