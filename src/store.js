@@ -14,7 +14,7 @@ const initState = {
 const reducer = (state = initState, action) => {
 
     switch(action.type) {
-        
+
         // For simple value changes on the state
         case 'SET_VALUE':
             return {
@@ -29,7 +29,7 @@ const reducer = (state = initState, action) => {
         case 'SET_ADDRESSES':
             var addresses = action.payload;
             for(var i=0; i<addresses.length; i++) {
-                addresses[i].balance = addresses[i].balance.slice(0,4); // Simplified balance values for simplicity's sake
+                addresses[i].balance = +addresses[i].balance.slice(0,4); // Simplified balance values for simplicity's sake
             }
             return {...state, list: action.payload, ui: {...state.ui, loading: false, error: false}}
 
@@ -46,9 +46,9 @@ const reducer = (state = initState, action) => {
             var newList = state.list.slice();
             for(var j=0; j<state.list.length; j++) {
                 if(state.list[j].account === action.payload.origin) {
-                    newList[j].balance -= action.payload.amount;
-                } else if (state.list[j].account === action.payload.destionation) {
-                    newList[j].balance += action.payload.amount;
+                    newList[j].balance -= +action.payload.amount;
+                } if (state.list[j].account === action.payload.destination) {
+                    newList[j].balance += +action.payload.amount;
                 }
             }
             return {...state, list: newList, lastTransaction: action.payload, ui: {...state.ui, redirectToSuccess: true}}

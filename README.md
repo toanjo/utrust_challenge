@@ -40,4 +40,5 @@
 
     Test for a transaction (with cypress?)
     Show available amount on the form after pasting origin address
-    Update README
+    Update README with proper markdown
+    Review all code and add comments wherever necessary

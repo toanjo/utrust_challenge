@@ -35,7 +35,7 @@ export default function SendForm() {
     } else alert('Origin Address is not valid.')    
   }
 
-  if (!list.length) { // Refreshing the form page leads back to the list
+  if (!list.length) { // Refreshing the /send URL redirects back to the list
     history.replace("/");
     return null;
   }
