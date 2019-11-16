@@ -8,7 +8,8 @@ export const Form = styled.div`
 export const Label = styled.label`
     font-size: 0.8em;
     padding: 0.5em;
-    display: inline-block;
+    display: ${props => props.right ? "block" : "inline-block"};
+    float: ${props => props.right ? "right" : "none"};
 `
 
 export const Input = styled.input`

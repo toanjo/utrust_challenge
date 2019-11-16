@@ -40,7 +40,6 @@
 
 # TODO
 
-    Show available amount on the form after pasting origin address
     Test for a transaction (with cypress?)
     Update README with proper markdown
     Review all code and add comments wherever necessary

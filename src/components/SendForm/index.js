@@ -13,6 +13,7 @@ export default function SendForm() {
   const [origin,setOrigin] = useState("");
   const [destination,setDestination] = useState("");
   const [amount,setAmount] = useState("");
+  const [available, setAvailable] = useState(null);
 
   const list = useSelector(state => state.list)
   const ui = useSelector(state => state.ui)
@@ -24,6 +25,17 @@ export default function SendForm() {
       history.replace("send/success")
     }
   }, [ui.redirectToSuccess, history])
+
+  const checkFunds = React.useCallback(() => {
+    var account = list.filter(obj => {return obj.account === origin})[0];
+    setAvailable(account ? account.balance : null)
+  },[list, origin])
+
+  useEffect(() => {
+    if(origin && origin.length === 42) {
+      checkFunds();
+    } else setAvailable(null);
+  }, [origin, checkFunds])
 
   const submit = () => {
     var accounts = list.map(item => item.account);
@@ -47,6 +59,7 @@ export default function SendForm() {
         </Title>
         <Form>
           <Label>From</Label>
+          {available && <Label right>Available funds: {available} ETH</Label>}
           <Input type="text" onChange={(e) => setOrigin(e.target.value)}
           placeholder="Your Address" value={origin}/>
           <Label>To</Label>
