@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { resetUI } from '../../actions/actions';
+import { LogoElement } from './styles';
 
 import {
     useHistory
@@ -17,8 +18,8 @@ export default function Logo() {
   }
 
   return (
-    <p style={{marginBottom:'1em'}} onClick={() => navigate()}>
-        UTRUST
-    </p>
+    <LogoElement onClick={() => navigate()}>
+        utrust
+    </LogoElement>
   );
 }

@@ -1,9 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ListItem from '../ListItem/ListItem';
+import ListItem from '../ListItem';
 import {
   Link
 } from "react-router-dom";
+
+import { ListElement, Footer } from './styles';
+import { Title } from '../../styles/common';
 
 export default function List() {
 
@@ -12,15 +15,15 @@ export default function List() {
 
   return (
     <div>
-        <p className="subtitle">
+        <Title>
             My Ethereum Addressess
-        </p>
-        <div className="list">
+        </Title>
+        <ListElement>
             {ui.loading && <div style={{height:'160px'}}>Fetching</div>}
             {ui.error && <div style={{height:'160px'}}>Error</div>}
             {list.length > 0 && list.map(address => <ListItem key={address.account} data={address} />)}
-        </div>
-        <footer className="card-footer" style={{alignItems: "center", borderTop: "none", justifyContent: "space-between"}}>
+        </ListElement>
+        <Footer>
             <div>Please copy the address from which you wish to send money.
               <p>
                 <small>
@@ -28,8 +31,8 @@ export default function List() {
                 </small>
               </p>
             </div>
-            <Link to="/send" className="button is-primary" style={{backgroundColor:"#6932D4", marginLeft:"2em"}}>Next</Link>
-        </footer>
+            <Link to="/send" className="button">Next</Link>
+        </Footer>
     </div>
   );
 }

@@ -29,7 +29,7 @@
 ## Styling
 
     I initially imported [Bulma](https://bulma.io/) to easily style my components and elements.
-    <!-- I then started applying enough custom styles on top of it that it made sense to just go for my own pure CSS. I took this as an opportunity to try out styled-components, as I feel like it is an elegant, readable and maintainable solution for styling the application. -->
+    I then started applying enough custom styles on top of it that it made sense to just go for my own pure CSS. I took this as an opportunity to try out styled-components, as I feel like it is an elegant, readable and maintainable solution for styling the application.
 
 ## Testing
 
@@ -42,17 +42,12 @@
     Add additional validation for transaction amount
 
 ## Styling
-    Improve style of logo
-    Improve style of form
-    Improve style of success
     Improve style of loading and error div
+    Remove bulma and change global class names
 
 ## Testing
     Test for a transaction (with cypress?)
 
 ## Extra
-    Review all file names and structure
     Separate reducer from store
-    Display a "copied to clipboard" alert
-    Improve CSS organization
-    
+    Display a "copied to clipboard" alert    

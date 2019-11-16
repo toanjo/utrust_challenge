@@ -5,6 +5,9 @@ import {
   useHistory
 } from "react-router-dom";
 
+import { Form, Input, Label, Footer } from './styles';
+import { Title } from '../../styles/common';
+
 export default function SendForm() {
 
   const [origin,setOrigin] = useState("");
@@ -36,26 +39,26 @@ export default function SendForm() {
 
   return (
     <div>
-        <p className="subtitle">
+        <Title>
             Please fill the form to send Ethereum
-        </p>
-        <div className="form" style={{marginBottom:'1.5rem'}}>
-          <label>From</label>
-          <input className="input" type="text" onChange={(e) => setOrigin(e.target.value)}
+        </Title>
+        <Form>
+          <Label>From</Label>
+          <Input type="text" onChange={(e) => setOrigin(e.target.value)}
           placeholder="Your Address" value={origin}/>
-          <label>To</label>
-          <input className="input" type="text" onChange={(e) => setDestination(e.target.value)}
+          <Label>To</Label>
+          <Input type="text" onChange={(e) => setDestination(e.target.value)}
           placeholder="Destination Address" value={destination}/>
-          <label>Amount</label>
-          <input className="input" type="number" onChange={(e) => setAmount(e.target.value)}
+          <Label>Amount</Label>
+          <Input type="number" onChange={(e) => setAmount(e.target.value)}
           placeholder="Ethereum Amount" value={amount}/>
-        </div>
-        <footer className="card-footer" style={{alignItems: "center", borderTop: "none", display:'flex', flexDirection:'row-reverse'}}>
-            <button className="button is-primary" disabled={!(origin && destination && amount)}
-            style={{backgroundColor:"#6932D4"}} onClick={() => submit()}>
+        </Form>
+        <Footer>
+            <button className="button" disabled={!(origin && destination && amount)}
+            onClick={() => submit()}>
               Send
             </button>
-        </footer>
+        </Footer>
     </div>
   );
 }

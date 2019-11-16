@@ -8,12 +8,12 @@ import {
 
 import { requestUrl } from './utils/defaults';
 import { setAddresses, handleError } from './actions/actions';
-import './App.css';
+import GlobalStyle from './styles/global';
 
-import List from './components/List/List'
-import SendForm from './components/SendForm/SendForm';
-import Logo from './components/Logo/Logo';
-import Success from './components/Success/Success';
+import List from './components/List';
+import SendForm from './components/SendForm';
+import Logo from './components/Logo';
+import Success from './components/Success';
 
 function App() {
 
@@ -26,26 +26,29 @@ function App() {
   }, [dispatch]) 
 
   return (
-    <div className="App">
-      <div style={{margin:'auto'}}>
-        <Logo /> {/* TODO - Clicking the logo should reset the UI */}
-        <div className="card" style={{width:'580px', minHeight:'325px'}}>
-          <div className="card-content">
-            <Switch>
-              <Route exact path="/">
-                <List />
-              </Route>
-              <Route exact path="/send">
-                <SendForm />
-              </Route>
-              <Route path="/send/success">
-                <Success />
-              </Route>
-            </Switch>
+    <>
+      <div className="App">
+        <main>
+          <Logo /> {/* TODO - Clicking the logo should reset the UI */}
+          <div className="my-card">
+            <div className="my-card-content">
+              <Switch>
+                <Route exact path="/">
+                  <List />
+                </Route>
+                <Route exact path="/send">
+                  <SendForm />
+                </Route>
+                <Route path="/send/success">
+                  <Success />
+                </Route>
+              </Switch>
+            </div>
           </div>
-        </div>
+        </main>
       </div>
-    </div>
+      <GlobalStyle />
+    </>
   );
 }
 

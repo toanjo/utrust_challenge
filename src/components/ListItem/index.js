@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Balance, Address, Item } from './styles';
+
 export default function ListItem (address) {
 
   function copyToClipboard(text) {
@@ -12,12 +14,14 @@ export default function ListItem (address) {
   }
 
   return (
-    <div className="list-item" style={{backgroundColor:'#F5F5FF'}}>
+    <Item>
         {/* TODO - Display a "copied to clipboard" alert */}
-        <span style={{cursor:'copy', fontSize:'0.85em'}} onClick={() => copyToClipboard(address.data.account)}>
+        <Address onClick={() => copyToClipboard(address.data.account)}>
           {address.data.account}
-        </span>
-        <strong style={{float:'right'}}>{address.data.balance} ETH</strong>
-    </div>
+        </Address>
+        <Balance>
+          {address.data.balance} <span style={{fontWeight:'normal'}}>ETH</span>
+        </Balance>
+    </Item>
   );
 }
