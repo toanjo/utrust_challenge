@@ -59,18 +59,18 @@ export default function SendForm() {
         </Title>
         <Form>
           <Label>From</Label>
-          {available && <Label right>Available funds: {available} ETH</Label>}
-          <Input type="text" onChange={(e) => setOrigin(e.target.value)}
+          {available && <Label id="available-funds" right>Available funds: {available} ETH</Label>}
+          <Input id="origin-address" type="text" onChange={(e) => setOrigin(e.target.value)}
           placeholder="Your Address" value={origin}/>
           <Label>To</Label>
-          <Input type="text" onChange={(e) => setDestination(e.target.value)}
+          <Input id="destination-address" type="text" onChange={(e) => setDestination(e.target.value)}
           placeholder="Destination Address" value={destination}/>
           <Label>Amount</Label>
-          <Input bold type="number" onChange={(e) => setAmount(e.target.value)}
+          <Input bold id="amount" type="number" onChange={(e) => setAmount(e.target.value)}
           placeholder="Ethereum Amount" value={amount}/>
         </Form>
         <Footer>
-            <button className="button" disabled={!(origin && destination && amount)}
+            <button className="button" id="send-button" disabled={!(origin && destination && amount)}
             onClick={() => submit()}>
               Send
             </button>

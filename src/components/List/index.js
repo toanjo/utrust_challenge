@@ -32,7 +32,7 @@ export default function List() {
                 </small> : <span style={{color:'#6932D4'}}>Address copied to clipboard!</span>}
               </p>
             </div>
-            <button onClick={() => history.replace("/send")} className="button">Next</button>
+            <button id="next-button" onClick={() => history.replace("/send")} className="button">Next</button>
         </Footer>
     </div>
   );

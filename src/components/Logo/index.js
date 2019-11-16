@@ -19,7 +19,7 @@ export default function Logo() {
   }
 
   return (
-    <LogoElement onClick={() => navigate()}>
+    <LogoElement id="utrust-logo" onClick={() => navigate()}>
         utrust <img src={icon} alt="utrust" style={{marginBottom:'4px'}}/>
     </LogoElement>
   );

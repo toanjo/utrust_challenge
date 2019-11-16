@@ -26,16 +26,16 @@ export default function Success() {
               <img src="http://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png" alt="Transaction Complete" style={{maxWidth:'20%'}}/>
           </div>
           <Label>You Sent </Label>
-          <Amount>{transaction.amount} ETH</Amount>
+          <Amount id="transaction-amount">{transaction.amount} ETH</Amount>
           <Divider />
           <h3>
             From
           </h3>
-          <Address>{transaction.origin}</Address>
+          <Address id="transaction-origin">{transaction.origin}</Address>
           <h3>
             To
           </h3>
-          <Address>{transaction.destination}</Address>
+          <Address id="transaction-destination">{transaction.destination}</Address>
         </Container>
     </div>
   );

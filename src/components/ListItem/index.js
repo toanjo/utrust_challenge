@@ -24,7 +24,7 @@ export default function ListItem (address) {
         <Address onClick={() => copyToClipboard(address.data.account)}>
           {address.data.account}
         </Address>
-        <Balance>
+        <Balance id={"balance-"+address.data.account}>
           {address.data.balance} <span style={{fontWeight:'normal'}}>ETH</span>
         </Balance>
     </Item>
