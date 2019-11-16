@@ -43,11 +43,14 @@ const reducer = (state = initState, action) => {
 
         // Change state according to requested transaction
         case 'PROCESS_TRANSACTION':
+            if (action.payload.origin === action.payload.destination)
+            return {...state, lastTransaction: action.payload, ui: {...state.ui, redirectToSuccess: true}}
+
             var newList = state.list.slice();
             for(var j=0; j<state.list.length; j++) {
                 if(state.list[j].account === action.payload.origin) {
                     newList[j].balance -= +action.payload.amount;
-                } if (state.list[j].account === action.payload.destination) {
+                } else if (state.list[j].account === action.payload.destination) {
                     newList[j].balance += +action.payload.amount;
                 }
             }
