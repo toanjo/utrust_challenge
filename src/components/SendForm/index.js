@@ -6,7 +6,7 @@ import {
 
 import { processTransaction } from '../../actions/actions';
 
-import { Title } from '../../styles/common';
+import { Title, Button } from '../../styles/common';
 import { Form, Input, Label, Footer } from './styles';
 
 export default function SendForm() {
@@ -73,10 +73,10 @@ export default function SendForm() {
           placeholder="Ethereum Amount" value={amount}/>
         </Form>
         <Footer>
-            <button className="button" id="send-button" disabled={!(origin && destination && amount)}
+            <Button id="send-button" disabled={!(origin && destination && amount)}
             onClick={() => submit()}>
               Send
-            </button>
+            </Button>
         </Footer>
     </div>
   );

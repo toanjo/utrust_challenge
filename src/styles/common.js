@@ -6,3 +6,9 @@ export const Title = styled.p`
     line-height: 1.25;
     margin: 1em;
 `
+
+export const Button = styled.button `
+    color: white;
+    background-color: #6932D4;
+    border-radius: 100px;
+`

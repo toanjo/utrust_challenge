@@ -23,11 +23,7 @@ export default createGlobalStyle`
     border-radius: 8px;
   }
 
-  .button {
-    color: white;
-    background-color: #6932D4;
-    border-radius: 100px;
-
+  button {
     /* base button styling copied from Bulma CSS */
     cursor: pointer;
     justify-content: center;
@@ -56,11 +52,11 @@ export default createGlobalStyle`
     user-select: none;
   }
 
-  .button:hover {
+  button:hover {
     color: white;
   }
 
-  .button:disabled {
+  button:disabled {
     background: #A180E5;
     cursor: not-allowed;
   }

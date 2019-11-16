@@ -4,7 +4,7 @@ import {
   useHistory
 } from "react-router-dom";
 
-import { Title } from '../../styles/common';
+import { Title, Button } from '../../styles/common';
 import { ListElement, Footer, Fallback } from './styles';
 
 import ListItem from '../ListItem';
@@ -33,7 +33,7 @@ export default function List() {
                 </small> : <span style={{color:'#6932D4'}}>Address copied to clipboard!</span>}
               </p>
             </div>
-            <button id="next-button" onClick={() => history.replace("/send")} className="button">Next</button>
+            <Button id="next-button" onClick={() => history.replace("/send")}>Next</Button>
         </Footer>
     </div>
   );
