@@ -34,8 +34,7 @@
 
 # TODO
 
-    Add a proper loading icon
-    Move the fetching to root component
+    Add a proper loading and error div
     Clicking the logo should reset the ui state
     Fix style of form
     Improve style of success

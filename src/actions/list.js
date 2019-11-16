@@ -1,10 +1,10 @@
-export const fetchList = () => ({
-    type: 'FETCH_ADDRESSES'
-});
-
 export const setAddresses = (data) => ({
     type: 'SET_ADDRESSES',
     payload: data
+})
+
+export const handleError = () => ({
+    type: 'HANDLE_ERROR',
 })
 
 export const processTransaction = (data) => ({

@@ -1,25 +1,14 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { requestUrl } from '../../utils/defaults';
-import axios from 'axios';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import ListItem from '../ListItem/ListItem';
 import {
   Link
 } from "react-router-dom";
-import { setAddresses } from '../../actions/list.js';
 
 export default function List() {
 
-  const dispatch = useDispatch();
   const list = useSelector(state => state.list)
-  const ui = useSelector(state => state.ui)
-
-  useEffect(() => {
-    if(!list.length) { // Avoid fetching data again
-      axios.get(requestUrl)
-      .then((response) => dispatch(setAddresses(response.data.result)))
-    }
-  }, [dispatch, list])  
+  const ui = useSelector(state => state.ui) 
 
   return (
     <div>
@@ -27,9 +16,9 @@ export default function List() {
             My Ethereum Addressess
         </p>
         <div className="list">
-            {/* TODO - Add a proper loading icon */}
-            {ui.loading ? <div style={{height:'160px'}}>Fetching</div> : 
-            list.map(address => <ListItem key={address.account} data={address} />)}
+            {ui.loading && <div style={{height:'160px'}}>Fetching</div>}
+            {ui.error && <div style={{height:'160px'}}>Error</div>}
+            {list.length > 0 && list.map(address => <ListItem key={address.account} data={address} />)}
         </div>
         <footer className="card-footer" style={{alignItems: "center", borderTop: "none", justifyContent: "space-between"}}>
             <div>Please copy the address from which you wish to send money.

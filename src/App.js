@@ -1,4 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import axios from 'axios';
+import {
+  Switch,
+  Route
+} from "react-router-dom";
+
+import { requestUrl } from './utils/defaults';
+import { setAddresses, handleError } from './actions/list.js';
 import './App.css';
 
 import List from './components/List/List'
@@ -6,12 +15,16 @@ import SendForm from './components/SendForm/SendForm';
 import Logo from './components/Logo/Logo';
 import Success from './components/Success/Success';
 
-import {
-  Switch,
-  Route
-} from "react-router-dom";
-
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+      axios.get(requestUrl)
+      .then((response) => dispatch(setAddresses(response.data.result)))
+      .catch(() => dispatch(handleError()))
+  }, [dispatch]) 
+
   return (
     <div className="App">
       <div style={{margin:'auto'}}>
