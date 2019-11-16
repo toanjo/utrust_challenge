@@ -40,13 +40,10 @@
 
 ## Functionality
     Add additional validation for transaction amount
-
-## Styling
-    Fix font
+    Show available amount on the form
 
 ## Testing
     Test for a transaction (with cypress?)
 
 ## Extra
-    Separate reducer from store
-    Display a "copied to clipboard" alert    
+    Improve reducer - see JP's code

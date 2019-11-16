@@ -6,7 +6,8 @@ const initState = {
     ui: {
         loading: true,
         error: false,
-        redirectToSuccess: false
+        redirectToSuccess: false,
+        copied: false
     }
 };
 
@@ -25,7 +26,10 @@ const reducer = (state = initState, action) => {
             return {...state, ui: {...state.ui, loading: false, error: true}}
 
         case 'RESET_UI':
-            return {...state, ui: {...state.ui, redirectToSuccess: false}}
+            return {...state, ui: {...state.ui, redirectToSuccess: false, copied: false}}
+
+        case 'COPIED_TO_CLIPBOARD':
+            return {...state, ui: {...state.ui, copied: true}}
 
         case 'PROCESS_TRANSACTION':
             var newList = state.list.slice();

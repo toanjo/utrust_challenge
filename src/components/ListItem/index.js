@@ -1,8 +1,12 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { copiedToClipboard } from '../../actions/actions';
 
 import { Balance, Address, Item } from './styles';
 
 export default function ListItem (address) {
+
+  const dispatch = useDispatch();
 
   function copyToClipboard(text) {
     let textField = document.createElement('textarea');
@@ -11,6 +15,7 @@ export default function ListItem (address) {
     textField.select();
     document.execCommand('copy');
     textField.remove();
+    dispatch(copiedToClipboard());
   }
 
   return (

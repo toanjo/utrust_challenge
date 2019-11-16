@@ -27,9 +27,9 @@ export default function List() {
         <Footer>
             <div>Please copy the address from which you wish to send money.
               <p>
-                <small>
+                {!ui.copied ? <small>
                   Clicking on an address will copy it to the clipboard.
-                </small>
+                </small> : <span style={{color:'#6932D4'}}>Address copied to clipboard!</span>}
               </p>
             </div>
             <button onClick={() => history.replace("/send")} className="button">Next</button>
