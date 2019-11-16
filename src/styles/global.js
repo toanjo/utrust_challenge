@@ -10,6 +10,31 @@ export default createGlobalStyle`
     color: white;
     background-color: #6932D4;
     border-radius: 100px;
+    cursor: pointer;
+    justify-content: center;
+    padding-bottom: calc(.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(.5em - 1px);
+    text-align: center;
+    white-space: nowrap;
+    height: 2.5em;
+    font-size: 1rem;
+    position: relative;
+    vertical-align: top;
+    line-height: 1.5;
+    text-decoration: none;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    -webkit-appearance: none;
+    align-items: center;
+    border: 1px solid transparent;
+    box-shadow: none;
+    display: inline-flex;
+    -webkit-appearance: none;
+    align-items: center;
+    border: 1px solid transparent;
+    user-select: none;
   }
 
   .button:hover {
@@ -20,7 +45,7 @@ export default createGlobalStyle`
     background: #6932D4;
   }
 
-  .my-card {
+  .card {
     width: 580px; 
     min-height: 325px;
     border: 1px solid rgba(105, 50, 212, 0.2);
@@ -30,5 +55,9 @@ export default createGlobalStyle`
 
   main {
     margin: auto;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
   }
 `

@@ -50,7 +50,7 @@ export default function SendForm() {
           <Input type="text" onChange={(e) => setDestination(e.target.value)}
           placeholder="Destination Address" value={destination}/>
           <Label>Amount</Label>
-          <Input type="number" onChange={(e) => setAmount(e.target.value)}
+          <Input bold type="number" onChange={(e) => setAmount(e.target.value)}
           placeholder="Ethereum Amount" value={amount}/>
         </Form>
         <Footer>

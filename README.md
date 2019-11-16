@@ -42,7 +42,7 @@
     Add additional validation for transaction amount
 
 ## Styling
-    Remove bulma and change global class names
+    Fix font
 
 ## Testing
     Test for a transaction (with cypress?)

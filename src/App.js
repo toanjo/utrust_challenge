@@ -30,20 +30,18 @@ function App() {
       <div className="App">
         <main>
           <Logo /> {/* TODO - Clicking the logo should reset the UI */}
-          <div className="my-card">
-            <div className="my-card-content">
-              <Switch>
-                <Route exact path="/">
-                  <List />
-                </Route>
-                <Route exact path="/send">
-                  <SendForm />
-                </Route>
-                <Route path="/send/success">
-                  <Success />
-                </Route>
-              </Switch>
-            </div>
+          <div className="card">
+            <Switch>
+              <Route exact path="/">
+                <List />
+              </Route>
+              <Route exact path="/send">
+                <SendForm />
+              </Route>
+              <Route path="/send/success">
+                <Success />
+              </Route>
+            </Switch>
           </div>
         </main>
       </div>

@@ -8,6 +8,7 @@ export const Balance = styled.span`
 export const Address = styled.span`
     cursor: copy;
     font-size: 0.85em;
+    font-weight: 400;
 `
 
 export const Item = styled.div`

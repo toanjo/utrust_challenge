@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import ListItem from '../ListItem';
 import {
-  Link
+  useHistory
 } from "react-router-dom";
 
 import { ListElement, Footer, Fallback } from './styles';
@@ -12,6 +12,7 @@ export default function List() {
 
   const list = useSelector(state => state.list)
   const ui = useSelector(state => state.ui) 
+  const history = useHistory();
 
   return (
     <div>
@@ -31,7 +32,7 @@ export default function List() {
                 </small>
               </p>
             </div>
-            <Link to="/send" className="button">Next</Link>
+            <button onClick={() => history.replace("/send")} className="button">Next</button>
         </Footer>
     </div>
   );

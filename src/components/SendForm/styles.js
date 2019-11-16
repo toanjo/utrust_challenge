@@ -7,7 +7,8 @@ export const Form = styled.div`
 `
 export const Label = styled.label`
     font-size: 0.8em;
-    padding: 0.5em 0;
+    padding: 0.5em;
+    display: inline-block;
 `
 
 export const Input = styled.input`
@@ -19,11 +20,16 @@ export const Input = styled.input`
     height: 44px;
     padding: 0 0.5em;
     margin-bottom: 1em;
+    font-size: 0.9em;
     &:focus{
         outline: none;
     }
     &:last-child {
         margin-bottom: none;
+    }
+    font-weight: ${props => props.bold ? "bold" : "normal"};
+    &::placeholder {
+        font-weight: normal;
     }
 `
 export const Footer = styled.footer`

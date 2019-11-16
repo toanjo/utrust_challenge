@@ -4,6 +4,8 @@ export const Container = styled.div`
     padding: 2em;
     border-top: 1px solid #E0E0F4;
     background: #F5F5FF;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 `
 
 export const Address = styled.span`
