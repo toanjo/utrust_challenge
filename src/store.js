@@ -14,7 +14,18 @@ const initState = {
 const reducer = (state = initState, action) => {
 
     switch(action.type) {
+        
+        // For simple value changes on the state
+        case 'SET_VALUE':
+            return {
+                ...state,
+                ui: {
+                    ...state.ui,
+                    [action.payload.field]: action.payload.value
+                }
+            }
 
+        // After successfully fetching the data
         case 'SET_ADDRESSES':
             var addresses = action.payload;
             for(var i=0; i<addresses.length; i++) {
@@ -22,15 +33,15 @@ const reducer = (state = initState, action) => {
             }
             return {...state, list: action.payload, ui: {...state.ui, loading: false, error: false}}
 
+        // UI state changes for error case
         case 'HANDLE_ERROR':
             return {...state, ui: {...state.ui, loading: false, error: true}}
 
+        // UI state changes for when the logo is clicked
         case 'RESET_UI':
             return {...state, ui: {...state.ui, redirectToSuccess: false, copied: false}}
 
-        case 'COPIED_TO_CLIPBOARD':
-            return {...state, ui: {...state.ui, copied: true}}
-
+        // Change state according to requested transaction
         case 'PROCESS_TRANSACTION':
             var newList = state.list.slice();
             for(var j=0; j<state.list.length; j++) {

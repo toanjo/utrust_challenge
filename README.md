@@ -38,9 +38,6 @@
 
 # TODO
 
-## Testing
     Test for a transaction (with cypress?)
-
-## Extra
-    Improve reducer - see JP's code
     Show available amount on the form after pasting origin address
+    Update README

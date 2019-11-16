@@ -7,7 +7,7 @@ export default createGlobalStyle`
   }
 
   main {
-    margin: auto;
+    margin: 10% auto;
   }
 
   .App {

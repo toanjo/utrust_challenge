@@ -20,5 +20,9 @@ export const resetUI = () => ({
 })
 
 export const copiedToClipboard = () => ({
-    type: 'COPIED_TO_CLIPBOARD'
+    type: 'SET_VALUE',
+    payload: {
+        field: "copied",
+        value: true
+    }
 })
