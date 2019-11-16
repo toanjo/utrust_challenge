@@ -38,13 +38,21 @@
 
 # TODO
 
-    Add a proper loading and error div
-    Clicking the logo should reset the ui state
+## Functionality
+    Add additional validation for transaction amount
+
+## Styling
+    Improve style of logo
+    Improve style of form
     Improve style of success
-    Tests
-    
-    
+    Improve style of loading and error div
+
+## Testing
+    Test for a transaction (with cypress?)
+
+## Extra
+    Review all file names and structure
+    Separate reducer from store
     Display a "copied to clipboard" alert
-    Try styling with styled components
-    Consider a dark mode toggle
+    Improve CSS organization
     

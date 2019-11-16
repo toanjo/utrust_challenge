@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import { requestUrl } from './utils/defaults';
-import { setAddresses, handleError } from './actions/list.js';
+import { setAddresses, handleError } from './actions/actions';
 import './App.css';
 
 import List from './components/List/List'

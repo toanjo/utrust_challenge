@@ -11,3 +11,7 @@ export const processTransaction = (data) => ({
     type: 'PROCESS_TRANSACTION',
     payload: data
 })
+
+export const resetUI = () => ({
+    type: 'RESET_UI',
+})

@@ -19,10 +19,13 @@ const reducer = (state = initState, action) => {
             for(var i=0; i<addresses.length; i++) {
                 addresses[i].balance = addresses[i].balance.slice(0,4); // Simplified balance values for simplicity's sake
             }
-            return {...state, list: action.payload, ui: {loading: false, error: false, redirectToSuccess: false}}
+            return {...state, list: action.payload, ui: {...state.ui, loading: false, error: false}}
 
         case 'HANDLE_ERROR':
-            return {...state, ui: {loading: false, error: true, redirectToSuccess: false}}
+            return {...state, ui: {...state.ui, loading: false, error: true}}
+
+        case 'RESET_UI':
+            return {...state, ui: {...state.ui, redirectToSuccess: false}}
 
         case 'PROCESS_TRANSACTION':
             var newList = state.list.slice();
@@ -33,7 +36,7 @@ const reducer = (state = initState, action) => {
                     newList[j].balance += action.payload.amount;
                 }
             }
-            return {...state, list: newList, lastTransaction: action.payload, ui: {loading: false, error: false, redirectToSuccess: true}}
+            return {...state, list: newList, lastTransaction: action.payload, ui: {...state.ui, redirectToSuccess: true}}
 
         default:
             return {...state}

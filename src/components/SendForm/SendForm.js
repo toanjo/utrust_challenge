@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { processTransaction } from '../../actions/list.js';
+import { processTransaction } from '../../actions/actions';
 import {
   useHistory
 } from "react-router-dom";
