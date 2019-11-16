@@ -33,6 +33,7 @@ export default function SendForm() {
     history.replace("/");
     return null;
   }
+
   return (
     <div>
         <p className="subtitle">
@@ -49,9 +50,9 @@ export default function SendForm() {
           <input className="input" type="number" onChange={(e) => setAmount(e.target.value)}
           placeholder="Ethereum Amount" value={amount}/>
         </div>
-        <footer className="card-footer" style={{alignItems: "center", borderTop: "none", float:'right'}}>
+        <footer className="card-footer" style={{alignItems: "center", borderTop: "none", display:'flex', flexDirection:'row-reverse'}}>
             <button className="button is-primary" disabled={!(origin && destination && amount)}
-            style={{backgroundColor:"#6932D4", marginLeft:"2em"}} onClick={() => submit()}>
+            style={{backgroundColor:"#6932D4"}} onClick={() => submit()}>
               Send
             </button>
         </footer>

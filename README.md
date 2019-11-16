@@ -29,7 +29,7 @@
 ## Styling
 
     I initially imported [Bulma](https://bulma.io/) to easily style my components and elements.
-    I then started applying enough custom styles on top of it that it made sense to just go for my own pure CSS. I took this as an opportunity to try out styled-components, as I feel like it is an elegant, readable and maintainable solution for styling the application.
+    <!-- I then started applying enough custom styles on top of it that it made sense to just go for my own pure CSS. I took this as an opportunity to try out styled-components, as I feel like it is an elegant, readable and maintainable solution for styling the application. -->
 
 ## Testing
 
@@ -40,7 +40,6 @@
 
     Add a proper loading and error div
     Clicking the logo should reset the ui state
-    Fix style of form
     Improve style of success
     Tests
     
