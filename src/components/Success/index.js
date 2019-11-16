@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import { Title } from '../../styles/common';
-import { Container, Amount, Address, Divider } from './styles';
+import { Container, Amount, Address, Label, Divider } from './styles';
 
 export default function Success() {
 
@@ -25,16 +25,16 @@ export default function Success() {
           <div style={{textAlign:'center'}}>
               <img src="http://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png" alt="Transaction Complete" style={{maxWidth:'20%'}}/>
           </div>
-          <h2>You Sent </h2>
+          <Label>You Sent </Label>
           <Amount>{transaction.amount} ETH</Amount>
           <Divider />
-          <h2>
+          <h3>
             From
-          </h2>
+          </h3>
           <Address>{transaction.origin}</Address>
-          <h2>
+          <h3>
             To
-          </h2>
+          </h3>
           <Address>{transaction.destination}</Address>
         </Container>
     </div>

@@ -13,12 +13,18 @@ export const Address = styled.span`
     padding: 0 0.5em;
 `
 
+export const Label = styled.h3`
+    margin-bottom: 0.5rem;
+`
+
 export const Amount = styled.p`
     font-size: 2em;
+    margin-top: 0;
 `
 
 export const Divider = styled.hr`
     width: 33%;
     background-color: #202532;
     height: 1px;
+    margin-left: 0;
 `
