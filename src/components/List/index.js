@@ -5,7 +5,7 @@ import {
   Link
 } from "react-router-dom";
 
-import { ListElement, Footer } from './styles';
+import { ListElement, Footer, Fallback } from './styles';
 import { Title } from '../../styles/common';
 
 export default function List() {
@@ -19,8 +19,8 @@ export default function List() {
             My Ethereum Addressess
         </Title>
         <ListElement>
-            {ui.loading && <div style={{height:'160px'}}>Fetching</div>}
-            {ui.error && <div style={{height:'160px'}}>Error</div>}
+            {ui.loading && <Fallback>Fetching Data...</Fallback>}
+            {ui.error && <Fallback error>Could not fetch data from Etherscan API :(</Fallback>}
             {list.length > 0 && list.map(address => <ListItem key={address.account} data={address} />)}
         </ListElement>
         <Footer>

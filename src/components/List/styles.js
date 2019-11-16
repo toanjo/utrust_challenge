@@ -15,3 +15,10 @@ export const Footer = styled.footer`
     font-size: 0.8em;
     margin: 1em;
 `
+
+export const Fallback = styled.div`
+    min-height: 160px;
+    line-height: 160px;
+    text-align: center;
+    font-weight: ${props => props.error ? "bold" : "normal"};
+`

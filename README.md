@@ -42,7 +42,6 @@
     Add additional validation for transaction amount
 
 ## Styling
-    Improve style of loading and error div
     Remove bulma and change global class names
 
 ## Testing
