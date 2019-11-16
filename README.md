@@ -12,9 +12,12 @@
  
 ### Input Validation
 
-    On the "Send Money" Form, I kept the input validation simple, with only two checks:
+    On the "Send Money" Form, I kept the input validation simple, with only the following checks:
     - The Send button can only be pressed after all the input fields are completed.
     - The origin address must be one of the owned / listed addresses, meaning you can only send money from an account you own.
+    - The origin address must have sufficient funds to perform the requested transaction.
+
+    If the address is the same for origin and destination, the transaction will still be successful, not changing the balance of the account.
 
 ## State Management
 
@@ -33,7 +36,6 @@
 
 ## Testing
 
-    Having used create-react-app, the basis for testing the App was already made for me. I decided to complement it with react-testing-library.
     The app's mounting and unmounting is tested on src/App.test.js. It's a simple test that renders the app and then unmounts it, checking for any breaking issues.
 
 # TODO
