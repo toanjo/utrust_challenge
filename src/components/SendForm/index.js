@@ -27,8 +27,11 @@ export default function SendForm() {
 
   const submit = () => {
     var accounts = list.map(item => item.account);
-    if (accounts.includes(origin)) { // Check that the origin address is valid, i.e. part of the address list
-      dispatch(processTransaction({origin: origin, destination: destination, amount: amount}))
+    if (accounts.includes(origin)) { // Check that the origin address is an owned account
+      if(list.filter(obj => {return obj.account === origin})[0].balance >= amount) { // Check that the origin account has sufficient funds
+        dispatch(processTransaction({origin: origin, destination: destination, amount: amount}))
+      }
+      else alert('Insufficient funds in origin account!')
     } else alert('Origin Address is not valid.')    
   }
 

@@ -38,12 +38,9 @@
 
 # TODO
 
-## Functionality
-    Add additional validation for transaction amount
-    Show available amount on the form
-
 ## Testing
     Test for a transaction (with cypress?)
 
 ## Extra
     Improve reducer - see JP's code
+    Show available amount on the form after pasting origin address
