@@ -2,7 +2,7 @@
 
 Run the project with **yarn install** followed by **yarn start**.
 
-Run the included automated test with **yarn run test** or **yarn run start-server-and-test** if the development server is not running.
+Run the included automated test with **yarn run test** or **yarn run start-and-test** if the development server is not running.
 
 A screencast showcasing the basic flow of the built app can be found <a href="https://www.loom.com/share/c552b1d06bc043778f7548bcc4823d95" target="_blank">here</a>.
 
