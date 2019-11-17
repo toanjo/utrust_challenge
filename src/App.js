@@ -29,7 +29,7 @@ function App() {
     <>
       <div className="App">
         <main>
-          <Logo /> {/* TODO - Clicking the logo should reset the UI */}
+          <Logo />
           <div className="card">
             <Switch>
               <Route exact path="/">
